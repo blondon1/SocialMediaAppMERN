@@ -43,6 +43,10 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
+/* ROUTES WITH FILES */
+app.post("/auth/register", upload.single("picture"), register);
+app.post("/posts", verifyToken, upload.single("picture"), createPost);
+
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
 mongoose
@@ -51,7 +55,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+    app.listen(PORT, () => console.log(`Server Port: ${3001}`));
 
     /* ADD DATA ONE TIME */
     // User.insertMany(users);
