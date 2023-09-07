@@ -1,8 +1,12 @@
 import bcrypt from "bcrypt";
+//ecrypt password
 import jwt from "jsonwebtoken";
+//give the user a token for authentication
 import User from "../models/User.js";
+//get user
 
 /* REGISTER USER */
+//authorization request and response from and to the frontend
 export const register = async (req, res) => {
   try {
     //request body from front end
@@ -18,6 +22,7 @@ export const register = async (req, res) => {
     } = req.body;
     // use salt to encrypt password
     const salt = await bcrypt.genSalt();
+    //wait for salt to encrypt password
     const passwordHash = await bcrypt.hash(password, salt);
 
     const newUser = new User({
@@ -33,6 +38,8 @@ export const register = async (req, res) => {
       impressions: Math.floor(Math.random() * 10000),
     });
     const savedUser = await newUser.save();
+    //201 status code something has being created
+    //send back savceduser as json 
     res.status(201).json(savedUser);
   } catch (err) {
     res.status(500).json({ error: err.message });
