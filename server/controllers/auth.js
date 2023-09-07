@@ -5,6 +5,7 @@ import User from "../models/User.js";
 /* REGISTER USER */
 export const register = async (req, res) => {
   try {
+    //request body from front end
     const {
       firstName,
       lastName,
@@ -15,7 +16,7 @@ export const register = async (req, res) => {
       location,
       occupation,
     } = req.body;
-
+    // use salt to encrypt password
     const salt = await bcrypt.genSalt();
     const passwordHash = await bcrypt.hash(password, salt);
 

@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+// user model schema from database design
 const UserSchema = new mongoose.Schema(
   {
     firstName: {
@@ -38,8 +38,10 @@ const UserSchema = new mongoose.Schema(
     viewedProfile: Number,
     impressions: Number,
   },
+  //show when it was created
   { timestamps: true }
 );
-
+//create model from schema
 const User = mongoose.model("User", UserSchema);
+//export model
 export default User;

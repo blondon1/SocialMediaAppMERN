@@ -44,7 +44,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 /* ROUTES WITH FILES */
+// store picture locally as middleware before hitting API endpoint
 app.post("/auth/register", upload.single("picture"), register);
+//
 app.post("/posts", verifyToken, upload.single("picture"), createPost);
 
 /* MONGOOSE SETUP */
@@ -55,7 +57,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(PORT, () => console.log(`Server Port: ${3001}`));
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
     /* ADD DATA ONE TIME */
     // User.insertMany(users);
