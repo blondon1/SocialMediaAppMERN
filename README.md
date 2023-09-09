@@ -39,18 +39,6 @@ npm i express body-parser bcrypt cors dotenv gridfs-stream multer multer-gridfs-
 npm init -y
 ```
 
-### Installing
-
-
-* 
-```
-
-```
-### Executing program
-
-```
-* 
-```
 
 ## Version History
 
