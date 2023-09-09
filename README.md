@@ -39,27 +39,10 @@ npm i express body-parser bcrypt cors dotenv gridfs-stream multer multer-gridfs-
 npm init -y
 ```
 
-### Installing
 
-
-* 
-```
-
-```
-### Executing program
-
-```
-* 
-```
-
-## Version History
 
 * 0.1
     * Basic funtionality
-
-      
-
-## License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
